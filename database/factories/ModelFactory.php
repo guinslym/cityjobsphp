@@ -22,3 +22,21 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Emploi::class, function (Faker\Generator $faker) {
+
+    return [
+        'JOBURL' => $faker->name,
+        'SALARYMAX' => '$50,000',
+        'SALARYMIN' => '$40,000',
+        'SALARYTYPE' => 'annual',
+        'NAME' => $faker->words(5),
+        'POSITION' => $faker->words(4),
+        'JOBREF' => str_random(10),
+        'JOB_SUMMARY' => $faker->text,
+        'tweeted' => false,
+        'POSTDATE' => $faker->dateTime(),
+        'EXPIRYDATE' => $faker->dateTime(),
+        'slug' => str_random(10),
+    ];
+});
