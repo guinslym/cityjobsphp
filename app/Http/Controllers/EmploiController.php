@@ -18,6 +18,8 @@ class EmploiController extends Controller
     public function index()
     {
         //
+        $emplois = Emploi::all();
+        return view('blog.index', ['emplois' => $emplois]);
     }
 
     /**

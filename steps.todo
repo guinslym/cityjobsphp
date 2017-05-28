@@ -1,7 +1,7 @@
 Todo:
  ☐ Verify Routes
  ☐ Add blank View
- ☐ Db:seed with Faker
+ ✔ Db:seed with Faker @done (17-05-27 23:46)
  ☐ Add Templates
  ☐ Add 404
  ☐ Add download json file

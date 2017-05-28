@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => ['web']], function () {
+    Route::resource('emploi', 'EmploiController'); 
+});
+
 
 //homeListView
 Route::get('/', 'EmploiController@homepage')->name('home');
