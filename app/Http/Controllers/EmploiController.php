@@ -117,9 +117,11 @@ class EmploiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function search($id)
+    public function search(Request $request)
     {
         $route = \Route::current();
+
+        $searchkey = $request('searchkey')
         //https://stackoverflow.com/questions/30549416/laravel-5-routes-and-variable-parameters-in-controllers
         $emplois = DB::table('emploi')
                 ->where('JOBURL', 'like', 'T%')
