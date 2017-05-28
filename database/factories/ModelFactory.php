@@ -30,7 +30,7 @@ $factory->define(App\Emploi::class, function (Faker\Generator $faker) {
         'SALARYMAX' => '$50,000',
         'SALARYMIN' => '$40,000',
         'SALARYTYPE' => 'annual',
-        'NAME' => $faker->word,
+        'NAME' => implode('',$faker->words(2)),
         'POSITION' => $faker->sentence,
         'JOBREF' => str_random(10),
         'JOB_SUMMARY' => $faker->text,
