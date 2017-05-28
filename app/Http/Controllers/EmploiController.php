@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Request;
 use App\Emploi;
 use App\Description;
 
@@ -52,6 +51,8 @@ class EmploiController extends Controller
     public function show($id)
     {
         //
+        return view('emploi.show', 
+                        ['emploi' => Emploi::findOrFail($id)]);
     }
 
     /**
@@ -86,5 +87,44 @@ class EmploiController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Display an About page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function aboutPage()
+    {
+        //
+        return view('emploi.about');
+    }
+
+    /**
+     * Display a Statistic page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showStatistics()
+    {
+        //
+        return view('emploi.stats');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function search($id)
+    {
+        $route = \Route::current();
+        //https://stackoverflow.com/questions/30549416/laravel-5-routes-and-variable-parameters-in-controllers
+        $emplois = DB::table('emploi')
+                ->where('JOBURL', 'like', 'T%')
+                ->get();
+        return view('emploi.search', 
+                        ['emploi' => $emplois ]);
     }
 }

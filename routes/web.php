@@ -10,22 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['middleware' => ['web']], function () {
-    Route::resource('emploi', 'EmploiController'); 
-});
+
 
 
 //homeListView
-Route::get('/', 'EmploiController@homepage')->name('home');
+Route::get('/', 'EmploiController@index')->name('home');
+Route::get('/emploi', 'EmploiController@index')->name('home');
 
 //TemplateView
-Route::get('/about', 'EmploiController@showAbout')->name('about');
+Route::get('/about', 'EmploiController@aboutPage')->name('about');
 
 //Statistics (JSON)
 Route::get('/statistics', 'EmploiController@showStatistics')->name('stats');
 
 //Detail View (get)
-Route::get('/{id}', 'EmploiController@showStatistics')->where('id', '[0-9]+');
+Route::get('emploi/show/{id}', 'EmploiController@show')->where('id', '[0-9]+')->name('detail');
 
 //Search View (get)
-Route::get('/{searchkey}', 'EmploiController@showStatistics')->where('searchkey', '[A-Za-z]+');
+Route::get('search/{searchkey}', 'EmploiController@search')->where('searchkey', '[A-Za-z]+')->name('search');

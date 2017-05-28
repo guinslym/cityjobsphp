@@ -1,7 +1,26 @@
 Todo:
  ☐ Verify Routes
- ☐ Add blank View
+ ☐ How to create routes with params and controller with params
+   ✔ home @done (17-05-28 00:01)
+   ✔ about @done (17-05-28 00:09)
+   ✔ stats @done (17-05-28 00:10)
+   ☐ stats (json) maybe - api
+   ✔ show (detail) @done (17-05-28 00:48)
+   ☐ search
+ ✔ Add blank View @done (17-05-28 00:13)
  ✔ Db:seed with Faker @done (17-05-27 23:46)
- ☐ Add Templates
- ☐ Add 404
+ ✔ Add Templates @done (17-05-28 00:13)
  ☐ Add download json file
+ ☐ Add locale
+ ☐ Add 404
+ ☐ add real template
+
+
+helper:
+ ☐ 2 weeks ago
+   ☐ Carbon::now()->addDays(7);
+   ☐ https://laravel.io/forum/02-20-2015-using-carbon-to-get-next-weeks-dates?page=1
+   ☐ https://stackoverflow.com/questions/24925511/laravel-how-to-get-count-of-all-records-created-within-in-current-week-as-of-ye
+   ☐ https://laravel.io/forum/04-25-2014-get-list-with-created-at-of-one-week-ago-carbon-eloquent?page=1
+ ☐ Json or File output
+ ☐ Laravel... file from storage for Updating the db
