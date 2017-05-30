@@ -12,11 +12,15 @@ Todo:
  ✔ Add Templates @done (17-05-28 00:13)
  ✔ Add download json file @done (17-05-29 21:13)
  ☐ Make sure that each Controller can return a response
- ☐ Add locale
- ☐ Add 404
  ☐ add real template
+ ☐ Add order
+    ☐ Add 2 weeks ago
+    ☐ Add 2 weeks from now
+    ☐ Add all jobs
  ☐ Do a router with {query}
  ☐ Do a router with {searchKey}
+ ☐ Add locale
+ ☐ Add 404
  ✔ do it by reference-url @done (17-05-29 21:17)
 
 

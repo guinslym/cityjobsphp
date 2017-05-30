@@ -14,12 +14,24 @@ class EmploiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $ordering=null)
     {
         //
-        $emplois = Emploi::all();
-        //return view('emploi.index', ['emplois' => $emplois]);
-        return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
+        $ordering = $request->get('ordering');
+        
+        if ($ordering == 'ago') {
+           $emplois = Emploi::all();
+           //return view('emploi.index', ['emplois' => $emplois]);
+           return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
+        }elseif ($ordering == 'from') {
+           $emplois = Emploi::all();
+           //return view('emploi.index', ['emplois' => $emplois]);
+           return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
+        }else {
+           $emplois = Emploi::all();
+           //return view('emploi.index', ['emplois' => $emplois]);
+           return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
+        }
     }
 
     /**
@@ -36,39 +48,6 @@ class EmploiController extends Controller
         return response()->json($emploi,200,[],JSON_PRETTY_PRINT);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
     /**
      * Display an About page.

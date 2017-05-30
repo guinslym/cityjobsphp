@@ -14,8 +14,8 @@
 
 
 //homeListView
-Route::get('/', 'EmploiController@index')->name('home');
-Route::get('/emploi', 'EmploiController@index')->name('home');
+Route::get('/{ordering?}', 'EmploiController@index')->name('home');
+Route::get('/emploi/{ordering?}', 'EmploiController@index')->name('home');
 
 //Detail View (get)
 Route::get('emploi/show/{id}', 'EmploiController@show')->where('id', '[0-9]+')->name('detail');
