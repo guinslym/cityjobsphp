@@ -78,7 +78,8 @@ class EmploiController extends Controller
     public function aboutPage()
     {
         //
-        return view('emploi.about');
+        //return view('emploi.about');
+        return response()->json('About page' ,200,[],JSON_PRETTY_PRINT);
     }
 
     /**
@@ -89,7 +90,27 @@ class EmploiController extends Controller
     public function showStatistics()
     {
         //
-        return view('emploi.stats');
+        //return view('emploi.stats');
+        return response()->json('Statistics' ,200,[],JSON_PRETTY_PRINT);
+    }
+
+    /**
+     * Display a Statistic page AJAX call.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showStatisticsJSON(Request $request)
+    {
+        //
+        $annee = $request->get('annee');
+        $mois = $request->get('mois');
+        $jour = $request->get('jour');
+        $emplois = DB::table('emploi')
+                ->where('year', 'like', $searchKey)
+                ->where('month', 'like', $searchKey)
+                ->where('day', 'like', $searchKey)
+                ->get();
+        return response()->json('Statistics' ,200,[],JSON_PRETTY_PRINT);
     }
 
     /**
@@ -100,17 +121,15 @@ class EmploiController extends Controller
      */
     public function search(Request $request)
     {
-        /*
-        $route = \Route::current();
+        
+        
 
-        $searchkey = $request('searchkey')
+        $searchkey = $request->get('search');
         //https://stackoverflow.com/questions/30549416/laravel-5-routes-and-variable-parameters-in-controllers
         $emplois = DB::table('emploi')
                 ->where('JOBURL', 'like', $searchKey)
                 ->get();
-        return view('emploi.search', 
-                        ['emploi' => $emplois ]);
-        */
+        //return view('emploi.search', ['emploi' => $emplois ]);
         return 0;
     }
 

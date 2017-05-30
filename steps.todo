@@ -15,6 +15,8 @@ Todo:
  ☐ Add locale
  ☐ Add 404
  ☐ add real template
+ ☐ Do a router with {query}
+ ☐ Do a router with {searchKey}
  ✔ do it by reference-url @done (17-05-29 21:17)
 
 
