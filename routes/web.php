@@ -30,5 +30,5 @@ Route::get('emploi/show/{id}', 'EmploiController@show')->where('id', '[0-9]+')->
 //Search View (get)
 Route::get('search/{searchkey}', 'EmploiController@search')->where('searchkey', '[A-Za-z]+')->name('search');
 
-//Search View (get)
+//Downloading a JSON file view (get)
 Route::get('download', 'EmploiController@download')->name('download');

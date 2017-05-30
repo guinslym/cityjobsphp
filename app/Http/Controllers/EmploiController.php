@@ -129,4 +129,16 @@ class EmploiController extends Controller
         return view('emploi.search', 
                         ['emploi' => $emplois ]);
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function download()
+    {
+        //
+        $emplois = Emploi::all();
+        return $emplois;
+    }
 }
