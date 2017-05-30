@@ -19,12 +19,17 @@ class EmploiController extends Controller
         //
         $ordering = $request->get('ordering');
         
+        //expired 2 weeks ago
+        //http://localhost:8000/?ordering=ago
         if ($ordering == 'ago') {
-           $emplois = Emploi::all();
+           $emplois = Emploi::orderBy('created_at', 'asc')->first();
            //return view('emploi.index', ['emplois' => $emplois]);
            return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
-        }elseif ($ordering == 'from') {
-           $emplois = Emploi::all();
+        }
+        // will expire 2 weeks from now
+        //http://localhost:8000/?ordering=from
+        elseif ($ordering == 'from') {
+           $emplois = Emploi::orderBy('created_at', 'desc')->first();
            //return view('emploi.index', ['emplois' => $emplois]);
            return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
         }else {
