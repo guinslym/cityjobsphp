@@ -124,7 +124,7 @@ class EmploiController extends Controller
         $searchkey = $request('searchkey')
         //https://stackoverflow.com/questions/30549416/laravel-5-routes-and-variable-parameters-in-controllers
         $emplois = DB::table('emploi')
-                ->where('JOBURL', 'like', 'T%')
+                ->where('JOBURL', 'like', $searchKey)
                 ->get();
         return view('emploi.search', 
                         ['emploi' => $emplois ]);
