@@ -4,9 +4,9 @@ Todo:
    ✔ home @done (17-05-28 00:01)
    ✔ about @done (17-05-28 00:09)
    ✔ stats @done (17-05-28 00:10)
-   ☐ stats (json) maybe - api
+   ✔ stats (json) maybe - api @done (17-05-29 21:05)
    ✔ show (detail) @done (17-05-28 00:48)
-   ☐ search
+   ✔ search @done (17-05-29 21:05)
  ✔ Add blank View @done (17-05-28 00:13)
  ✔ Db:seed with Faker @done (17-05-27 23:46)
  ✔ Add Templates @done (17-05-28 00:13)

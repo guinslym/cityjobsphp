@@ -22,6 +22,7 @@ Route::get('/about', 'EmploiController@aboutPage')->name('about');
 
 //Statistics (JSON)
 Route::get('/statistics', 'EmploiController@showStatistics')->name('stats');
+Route::get('/statistics/{query}', 'EmploiController@showStatisticsJSON')->name('stats');
 
 //Detail View (get)
 Route::get('emploi/show/{id}', 'EmploiController@show')->where('id', '[0-9]+')->name('detail');
