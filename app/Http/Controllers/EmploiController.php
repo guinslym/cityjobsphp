@@ -83,18 +83,17 @@ class EmploiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showStatisticsJSON(Request $request)
+    public function showStatisticsJSON(Request $request, $annee=null, $mois=null, $jour=null)
     {
         //
         $annee = $request->get('annee');
         $mois = $request->get('mois');
         $jour = $request->get('jour');
-        $emplois = DB::table('emploi')
-                ->where('year', 'like', $searchKey)
-                ->where('month', 'like', $searchKey)
-                ->where('day', 'like', $searchKey)
-                ->get();
-        return response()->json('Statistics' ,200,[],JSON_PRETTY_PRINT);
+        $emplois = Emploi::whereYear('created_at', '=', $annee)
+              ->whereMonth('created_at', '=', $mois)
+              ->whereDay('created_at', '=', $jour)
+              ->get();
+        return response()->json(emplois ,200,[],JSON_PRETTY_PRINT);
     }
 
     /**

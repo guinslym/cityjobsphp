@@ -11,9 +11,12 @@ Todo:
  ✔ Db:seed with Faker @done (17-05-27 23:46)
  ✔ Add Templates @done (17-05-28 00:13)
  ✔ Add download json file @done (17-05-29 21:13)
- ☐ Make sure that each Controller can return a response
- ☐ add real template
- ☐ Add order
+ ✔ Make sure that each Controller can return a response @done (17-05-29 21:58)
+ ☐ Add vue.js
+ ☐ Add routers
+ ☐ Add pagination
+ ✔ add real template @done (17-05-29 22:00)
+ ✔ Add order @done (17-05-29 21:58)
     ✔ Add 2 weeks ago @done (17-05-29 21:55)
     ✔ Add 2 weeks from now @done (17-05-29 21:55)
     ✔ Add all jobs @done (17-05-29 21:55)
