@@ -18,28 +18,8 @@ class EmploiController extends Controller
     {
         //
         $emplois = Emploi::all();
-        return view('emploi.index', ['emplois' => $emplois]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        //return view('emploi.index', ['emplois' => $emplois]);
+        return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
     }
 
     /**
@@ -51,8 +31,9 @@ class EmploiController extends Controller
     public function show($id)
     {
         //
-        return view('emploi.show', 
-                        ['emploi' => Emploi::findOrFail($id)]);
+        $emploi = Emploi::findOrFail($id);
+        //return view('emploi.show', ['emploi' => $emplois]);
+        return response()->json($emploi,200,[],JSON_PRETTY_PRINT);
     }
 
     /**
