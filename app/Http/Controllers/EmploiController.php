@@ -119,6 +119,7 @@ class EmploiController extends Controller
      */
     public function search(Request $request)
     {
+        /*
         $route = \Route::current();
 
         $searchkey = $request('searchkey')
@@ -128,6 +129,8 @@ class EmploiController extends Controller
                 ->get();
         return view('emploi.search', 
                         ['emploi' => $emplois ]);
+        */
+        return 0;
     }
 
     /**
@@ -139,6 +142,6 @@ class EmploiController extends Controller
     {
         //
         $emplois = Emploi::all();
-        return $emplois;
+        return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
     }
 }
