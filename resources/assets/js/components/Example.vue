@@ -2,11 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Example Component</div>
+                <div class="panel panel-default v-for='notebook in notebooks">
+                    <div class="panel-heading">{{ notebook.name }}</div>
 
                     <div class="panel-body">
-                        I'm an example component!
+                        {{ notebook.body }}
                     </div>
                 </div>
             </div>
@@ -16,8 +16,17 @@
 
 <script>
     export default {
+        data(){
+            return {
+                notebooks: []
+            }
+        },
         mounted() {
-            console.log('Component mounted.')
+            var self=this;
+            axios.get('/notebook').then(function(response){
+                self.notebooks=response.data
+                //console.log(response);
+            });
         }
     }
 </script>

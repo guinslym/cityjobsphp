@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-
+Route::resource('notebook', 'NotebookController');
 
 
 
