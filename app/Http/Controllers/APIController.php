@@ -7,7 +7,7 @@ use App\Emploi;
 use App\Description;
 
 
-class EmploiController extends Controller
+class APIController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,19 +23,19 @@ class EmploiController extends Controller
         //http://localhost:8000/?ordering=ago
         if ($ordering == 'ago') {
            $emplois = Emploi::orderBy('created_at', 'asc')->first();
-           return view('emploi.index', ['emplois' => $emplois]);
-           //return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
+           //return view('emploi.index', ['emplois' => $emplois]);
+           return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
         }
         // will expire 2 weeks from now
         //http://localhost:8000/?ordering=from
         elseif ($ordering == 'from') {
            $emplois = Emploi::orderBy('created_at', 'desc')->first();
-           return view('emploi.index', ['emplois' => $emplois]);
-           //return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
+           //return view('emploi.index', ['emplois' => $emplois]);
+           return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
         }else {
            $emplois = Emploi::all();
-           return view('emploi.index', ['emplois' => $emplois]);
-           //return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
+           //return view('emploi.index', ['emplois' => $emplois]);
+           return response()->json($emplois,200,[],JSON_PRETTY_PRINT);
         }
     }
 
@@ -49,8 +49,8 @@ class EmploiController extends Controller
     {
         //
         $emploi = Emploi::findOrFail($id);
-        return view('emploi.show', ['emploi' => $emplois]);
-        //return response()->json($emploi,200,[],JSON_PRETTY_PRINT);
+        //return view('emploi.show', ['emploi' => $emplois]);
+        return response()->json($emploi,200,[],JSON_PRETTY_PRINT);
     }
 
 
@@ -62,8 +62,8 @@ class EmploiController extends Controller
     public function aboutPage()
     {
         //
-        return view('emploi.about');
-        //return response()->json('About page' ,200,[],JSON_PRETTY_PRINT);
+        //return view('emploi.about');
+        return response()->json('About page' ,200,[],JSON_PRETTY_PRINT);
     }
 
     /**
@@ -74,8 +74,8 @@ class EmploiController extends Controller
     public function showStatistics()
     {
         //
-        return view('emploi.stats');
-        //return response()->json('Statistics' ,200,[],JSON_PRETTY_PRINT);
+        //return view('emploi.stats');
+        return response()->json('Statistics' ,200,[],JSON_PRETTY_PRINT);
     }
 
     /**
@@ -112,8 +112,8 @@ class EmploiController extends Controller
         $emplois = DB::table('emploi')
                 ->where('JOBURL', 'like', $searchKey)
                 ->get();
-        return view('emploi.search', ['emploi' => $emplois ]);
-        //return 0;
+        //return view('emploi.search', ['emploi' => $emplois ]);
+        return 0;
     }
 
     /**

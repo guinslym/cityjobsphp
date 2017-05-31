@@ -1,4 +1,4 @@
-@extends('master')
+@extends('emploi.base')
   @section('content')
   <div class="row">
   	<div class="col-md-12">

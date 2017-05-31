@@ -11,6 +11,7 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,7 +19,7 @@ Route::get('/', function () {
 
 Route::resource('notebook', 'NotebookController');
 
-
+*/
 
 Route::group(['middleware' => ['web']], function () {
 
